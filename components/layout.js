@@ -1,4 +1,6 @@
 import Head from "next/head";
+import Header from "./header";
+import Footer from "./footer";
 
 export default function Layout({children, title='', description=''}) {
   return (
@@ -7,8 +9,9 @@ export default function Layout({children, title='', description=''}) {
         <title>{`GutiarLa - ${title}`}</title>
         <meta name="description" content={description} />
     </Head>
-    <h1>Info from layout</h1>
+    <Header/>
     {children}
+    <Footer/>
     </>
   )
 }
