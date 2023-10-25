@@ -1,12 +1,19 @@
 import Layout from "@/components/layout";
+import ListadoGuitarras from "@/components/listado-guitarras";
 
 export default function Tienda() {
   return (
     <Layout
-      title={"Tienda"}
-      description={"Tienga Virtual, GuitarLA, Instrumentos Musicales, Guitarras Electricas"}
+      title={"Tienda Virtual"}
+      description={
+        "Tienda Virtual, GuitarLA, Instrumentos Musicales, Guitarras Electricas"
+      }
     >
-      <h1>Tienda</h1>
+      <main className="container">
+        <h1 className="heading">Nuestra Colección</h1>
+
+        <ListadoGuitarras/>
+      </main>
     </Layout>
   );
 }
