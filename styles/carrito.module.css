@@ -14,6 +14,40 @@
     padding: 3rem 0;
 }
 
+.producto{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 4rem;
+    align-items: center;
+    padding: 3rem 0;
+    border-bottom: 1px solid #cfcfcf;
+}
+.producto:last-of-type {
+    border-bottom: none;
+}
+.producto p{
+    margin:  0 0 1rem 0;
+}
+.producto span{
+    font-size: 3.2rem;
+    font-weight: 900;
+}
+
+.nombre{
+    font-size: 4.2rem;
+    font-weight: 700;
+}
+
+.precio{
+    margin-top: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.subtotal{
+    font-size: 2.2rem;
+}
+
 .resumen{
     padding: 3rem;
     background-color: #F9FAFB;

@@ -13,17 +13,27 @@ export default function Carrito({ carrito }) {
 
             {carrito.length === 0
               ? "Carrito Vacio"
-              : carrito.map((producto) => <div key={producto.id} className={styles.producto}> 
+              : carrito.map((producto) => (
+                  <div key={producto.id} className={styles.producto}>
                     <div>
-                        <Image width={250} height={480} src={producto.imagen} alt={`Imagen de la guitarra ${producto.nombre}`} />
+                      <Image
+                        width={250}
+                        height={480}
+                        src={producto.imagen}
+                        alt={`Imagen de la guitarra ${producto.nombre}`}
+                      />
                     </div>
                     <div>
-                        <p className={styles.nombre}>{producto.nombre}</p>
-                        <p className={styles.precio}>${producto.precio}</p>
-                        <p className={styles.subtotal}> Subtotal: ${producto.cantidad * producto.precio} </p>
+                      <p className={styles.nombre}>{producto.nombre}</p>
+                      <p>Cantidad : {producto.cantidad}</p>
+                      <p className={styles.precio}>$<span>{producto.precio}</span></p>
+                      <p className={styles.subtotal}>
+                        
+                        Subtotal: $<span>{producto.cantidad * producto.precio}</span>
+                      </p>
                     </div>
-
-              </div>)}
+                  </div>
+                ))}
           </div>
           <aside className={styles.resumen}>
             <h3>Resumen del pedido</h3>
