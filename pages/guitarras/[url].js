@@ -13,7 +13,14 @@ export default function Guitarra({ guitarra }) {
       return;
     }
 
-    // console.log(`Cantidad ${cantidad}`);
+    const guitarraSeleccionada = {
+      id: guitarra[0].id,
+      imagen: imagen.data.attributes.url,
+      nombre,
+      precio,
+      cantidad,
+    }
+    console.log("🚀 ~ file: [url].js:23 ~ handleSubmit ~ guitarraSeleccionada:", guitarraSeleccionada)
 
   }
   return (
