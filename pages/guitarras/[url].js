@@ -2,7 +2,7 @@ import Image from "next/image";
 import styles from "../../styles/guitarras.module.css";
 import Layout from "@/components/layout";
 import { useState } from "react";
-export default function Guitarra({ guitarra }) {
+export default function Guitarra({ guitarra, agregarCarrito }) {
   const [cantidad, setCantidad] = useState(0);
   const { nombre, descripcion, imagen, precio } = guitarra[0].attributes;
   const handleSubmit = e => {
@@ -20,7 +20,9 @@ export default function Guitarra({ guitarra }) {
       precio,
       cantidad,
     }
-    console.log("🚀 ~ file: [url].js:23 ~ handleSubmit ~ guitarraSeleccionada:", guitarraSeleccionada)
+
+    agregarCarrito(guitarraSeleccionada);
+    
 
   }
   return (
