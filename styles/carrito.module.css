@@ -61,4 +61,6 @@
     padding: 3rem;
     background-color: #F9FAFB;
     border-radius:1rem;
+    position: sticky;
+    top: 3rem;
 }
