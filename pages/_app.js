@@ -5,6 +5,12 @@ export default function App({ Component, pageProps }) {
 
   const carritoLS = typeof window !== "undefined" ? JSON.parse(localStorage.getItem('carrito')) ?? [] : [];
   const [carrito, setCarrito] = useState(carritoLS);
+  const [paginaLista, setPaginaLista] = useState(false);
+
+  useEffect( ()=>{
+    setPaginaLista(true);
+  },[] );
+
   useEffect( () => {
     localStorage.setItem('carrito', JSON.stringify(carrito))
   }, [carrito] );
@@ -47,7 +53,7 @@ export default function App({ Component, pageProps }) {
     window.localStorage.setItem("carrito", JSON.stringify(carrito));
   };
 
-  return (
+  return paginaLista ? (
     <Component
       {...pageProps}
       agregarCarrito={agregarCarrito}
@@ -55,5 +61,5 @@ export default function App({ Component, pageProps }) {
       actualizarCantidad={actualizarCantidad}
       carrito={carrito}
     />
-  );
+  ) : null;
 }
