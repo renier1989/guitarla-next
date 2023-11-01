@@ -3,7 +3,7 @@ import styles from "../styles/carrito.module.css";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-export default function Carrito({ carrito, actualizarCantidad }) {
+export default function Carrito({ carrito, actualizarCantidad,eliminarProducto}) {
 
   const [total, setTotal] = useState(0);
 
@@ -61,6 +61,7 @@ export default function Carrito({ carrito, actualizarCantidad }) {
                         <span>{producto.cantidad * producto.precio}</span>
                       </p>
                     </div>
+                    <button type="button" className={styles.eliminar} onClick={()=>eliminarProducto(producto.id)}>X</button>
                   </div>
                 ))}
           </div>
